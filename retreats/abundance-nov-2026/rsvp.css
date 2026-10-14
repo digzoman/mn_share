@@ -54,3 +54,27 @@
 .rsvp-note__text[hidden]{display:none!important}
 @media(max-width:1000px){.slot{grid-template-columns:70px 1fr}.route{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media(max-width:700px){.route{grid-template-columns:repeat(2,minmax(0,1fr))}.slot{grid-template-columns:73px 1fr}.rsvp-row{gap:10px}.rsvp-note{margin-top:0}}
+
+/* Timed itinerary with visible transition allowances */
+.slot{grid-template-columns:minmax(138px,155px) minmax(0,1fr);gap:14px}
+.slot time{font-size:10px;letter-spacing:0;line-height:1.65;overflow-wrap:normal}
+.day--feature__evening{padding:20px 16px 28px;background:#213e2f}
+.evening-label{text-align:center;color:#e3cda8;font:10px "DM Mono",monospace;letter-spacing:.06em;margin:2px 0 16px}
+.evening-option{border:1px solid #ffffff36;margin:12px 0;background:#f4f6ef;color:#243a2b;padding:13px 11px 10px}
+.evening-option__eyebrow{font:10px "DM Mono",monospace;color:#936945;letter-spacing:.07em;margin:0 0 7px 7px}
+.evening-option h4{font:500 30px "Cormorant Garamond",serif;line-height:1.1;margin:0 7px 10px}
+.evening-option .schedule{padding:0 8px}
+.evening-option .slot{border-color:#dce4d6;padding:12px 0}
+.evening-option .slot time{color:#8d6944}
+.evening-option .slot strong{color:#243a2b}
+.evening-option .slot p{color:#5e705f}
+.survey-cta{display:flex;align-items:center;justify-content:space-between;gap:25px;background:#dce6d6;border:1px solid #c5d4c0;padding:25px 28px;margin-top:26px}
+.survey-cta .eyebrow{color:#8a674a}
+.survey-cta h3{font-size:34px;margin:5px 0 8px}
+.survey-cta p{font-size:12px;color:#54705c;line-height:1.7;max-width:560px}
+.survey-cta .btn{white-space:normal;text-align:center;min-width:225px}
+.rsvp-return{margin-top:13px!important}
+.rsvp-return a{font-size:12px;font-weight:700;color:#385b40;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:1050px){.slot{grid-template-columns:minmax(105px,135px) minmax(0,1fr);gap:8px}.schedule,.dayheader{padding-inline:15px}.slot time{font-size:9px}.evening-option{padding-inline:6px}}
+@media(max-width:700px){.slot{grid-template-columns:minmax(118px,125px) minmax(0,1fr);gap:12px}.slot time{font-size:9px}.schedule,.dayheader{padding-inline:18px}.evening-option .schedule{padding-inline:6px}.survey-cta{display:block;padding:24px 22px}.survey-cta .btn{display:flex;margin-top:17px;width:100%}}
+@media(max-width:390px){.slot{grid-template-columns:113px minmax(0,1fr);gap:8px}.slot time{font-size:9px}.schedule,.dayheader{padding-inline:14px}.evening-option .schedule{padding-inline:3px}}
