@@ -1,30 +1,30 @@
 (function(){
 "use strict";
 const groups=[
- {day:"Friday, November 6",subtitle:"Come when you can. All activities are optional.",items:[
-  ["friday-arrival","Flexible welcome and settling in","Arrive anytime Friday evening and get comfortable."],
-  ["friday-spa","Hot tub and sauna","Open through the evening, including before and after dinner, once ready."],
-  ["friday-dinner","Late shared dinner","A relaxed dinner around 8:30 PM. Flexible for late arrivals."],
-  ["friday-fireplace","Fireside music and conversation","Relax before the 1:00 AM quiet time."]
+ {day:"Friday, November 6",subtitle:"Flexible arrivals. Every Friday activity is optional.",items:[
+  ["friday-arrival","5:00 PM to 10:00 PM: Flexible arrivals","An illustrative welcome window, not a strict arrival time. Arrive when your travel permits."],
+  ["friday-spa","6:00 PM to 8:15 PM and 9:45 PM to 12:15 AM: Hot tub and sauna","Optional wellness time both before and after the 8:30 PM dinner, once facilities are ready."],
+  ["friday-dinner","8:30 PM to 9:45 PM: Late shared dinner","Relaxed meal. Hosts will set aside food for anyone arriving later."],
+  ["friday-fireplace","9:45 PM to 12:15 AM: Fireplace and conversation","Low key music, games and conversation. Quiet time begins at 1:00 AM."]
  ]},
- {day:"Saturday, November 7",subtitle:"Mindful morning, County outing, sunset at home.",items:[
-  ["saturday-yoga","40 minute morning yoga","8:30 AM. Bring a notebook and pen to your mat."],
-  ["saturday-vision","30 minute meditation and vision notes","9:10 AM. Combine meditation, intention setting and writing."],
-  ["saturday-brunch","Brunch and notebook time","10:00 to 11:00 AM. Continue reflections during brunch."],
-  ["saturday-walk","Macaulay Mountain and Birdhouse City","A short woodland walk following the 11:30 AM departure."],
-  ["saturday-town","Picton town and harbour stroll","Short optional waterfront and boardwalk walk if timing allows."],
-  ["saturday-tasting","Black Prince wine or vinegar tasting","Aim for about 2:00 PM. Nonalcoholic vinegars available."],
-  ["saturday-food","Optional winery pizza and salads","Only if time and service allow before the 3:00 PM departure."],
-  ["saturday-sunset","Sunset together at the house","Home around 4:00 PM to enjoy the 4:51 PM sunset."],
-  ["saturday-spa","Hot tub, sauna and relaxation","Unwind after the outing."],
-  ["saturday-cozy","Shared dinner and fireplace evening","Dinner, music and good company."],
-  ["saturday-lanterns","Optional Firelight Lantern Festival","Saturday evening alternative in Picton after the house sunset."]
+ {day:"Saturday, November 7",subtitle:"Morning wellness, then a group outing and sunset at the house.",items:[
+  ["saturday-yoga","8:30 AM to 9:10 AM: Indoor yoga","Bring a notebook and pen. Setup runs 8:10 AM to 8:30 AM."],
+  ["saturday-vision","9:10 AM to 9:40 AM: Meditation and vision notes","A combined guided meditation and writing session."],
+  ["saturday-brunch","10:00 AM to 11:00 AM: Brunch and notebook reflection","Optional writing during the meal. Time to get ready is 11:00 AM to 11:30 AM."],
+  ["saturday-walk","12:15 PM to 12:55 PM: Macaulay Mountain walk","Allow 11:30 AM to 12:15 PM for carpool travel and parking."],
+  ["saturday-town","1:10 PM to 1:40 PM: Picton harbour and town stroll","Optional short walk after a 12:55 PM to 1:10 PM transition. Skip this stop first if running late."],
+  ["saturday-tasting","2:00 PM to 2:50 PM: Black Prince wine or vinegar tasting","Group tasting to arrange in advance. Allow 1:40 PM to 2:00 PM for travel and parking."],
+  ["saturday-food","2:00 PM to 2:50 PM: Optional winery pizza and salads","Only if coordinated in advance. This shares the tasting window."],
+  ["saturday-sunset","4:00 PM to 5:05 PM: Sunset gathering at home","Drive back 3:00 PM to 3:45 PM. Arrive and settle by 4:00 PM. Sunset is about 4:51 PM."],
+  ["saturday-spa","5:05 PM to 6:30 PM: Hot tub and sauna at home","Cozy house evening option after sunset."],
+  ["saturday-cozy","6:30 PM to 12:15 AM: Dinner and fireside evening","Option A: 6:30 PM to 8:00 PM dinner, followed by fireside relaxation until 12:15 AM."],
+  ["saturday-lanterns","5:30 PM to 10:15 PM: Optional Firelight Lantern Festival","Option B instead of house dinner: drive, arrive for the 7:00 PM procession, and return by 10:15 PM."]
  ]},
- {day:"Sunday, November 8",subtitle:"A slow goodbye.",items:[
-  ["sunday-stretch","Optional gentle morning stretch","Relaxed movement or an unhurried sleep in."],
-  ["sunday-brunch","Slow shared brunch","Final group meal and time to connect."],
-  ["sunday-reflect","Brief appreciation circle","A short closing group reflection."],
-  ["sunday-walk","Optional short walk and photos","Fresh air before departure, weather and transport permitting."]
+ {day:"Sunday, November 8",subtitle:"Slow morning. Flexible carpool departures.",items:[
+  ["sunday-stretch","9:00 AM to 9:30 AM: Optional morning stretch","Sleep in if you prefer. Brunch preparation runs 9:30 AM to 10:15 AM."],
+  ["sunday-brunch","10:15 AM to 11:15 AM: Shared brunch","Final shared meal and connections."],
+  ["sunday-reflect","11:15 AM to 11:40 AM: Brief appreciation circle","An optional short closing reflection. Packing and cleanup follow until 12:15 PM."],
+  ["sunday-walk","12:15 PM to 12:45 PM: Optional walk and photos","Weather permitting. Departures are flexible from 12:45 PM to 1:30 PM."]
  ]}
 ];
 const all=groups.flatMap(g=>g.items);
@@ -32,7 +32,7 @@ const params=new URLSearchParams(location.search);
 const requestedAttendance=(params.get("attend")||"").trim().toLowerCase();
 const recipient="14163339671";
 const section=document.createElement("section");section.className="rsvp";section.id="preferences";section.setAttribute("aria-labelledby","pref-title");
-section.innerHTML='<div class="wrap"><div class="rsvp-head"><div><div class="kicker eyebrow">08 / Shape the weekend</div><h2 id="pref-title">Your weekend,<br>your vote.</h2></div><p>Tell us which parts of the weekend appeal to you. Vote Yes, Maybe or No on each idea and use Add note for optional thoughts. This is a preference check, not a reservation.</p></div><div class="rsvp-panel"><div class="rsvp-top"><div class="rsvp-field"><label for="rsvp-name">Your name</label><input id="rsvp-name" maxlength="70" autocomplete="name" placeholder="Enter your name"><small>Personalized links support <code>?name=Daryna&amp;attend=Yes</code> to fill your name and default attendance.</small></div><div class="rsvp-attendance"><span>Are you planning to attend the retreat?</span><div id="rsvp-attend-controls" class="rsvp-buttons" role="group" aria-label="Overall attendance"></div></div></div><div class="rsvp-progress"><span>Make your selections or leave some unanswered.</span><span id="rsvp-progress-text" aria-live="polite">0 of '+all.length+' answered</span></div><div class="rsvp-bar" aria-hidden="true"><span id="rsvp-progress-fill"></span></div><form id="rsvp-form"><div id="rsvp-days" class="rsvp-days"></div><div class="rsvp-actions"><button type="button" class="rsvp-action rsvp-action--main" id="rsvp-whatsapp">Send preferences to Muneer on WhatsApp ↗</button><button type="button" class="rsvp-action rsvp-action--alt" id="rsvp-copy">Copy my responses</button></div><p id="rsvp-status" class="rsvp-status" aria-live="polite"></p><div class="rsvp-privacy"><strong>How saving works:</strong> Your votes and notes are saved in this browser as you make them. This site does not have a shared response database yet. The WhatsApp button prepares a message addressed to Muneer at +1 416 333 9671. Tap Send in WhatsApp to deliver it. Nothing is sent automatically.</div></form></div></div>';
+section.innerHTML='<div class="wrap"><div class="rsvp-head"><div><div class="kicker eyebrow">08 / Shape the weekend</div><h2 id="pref-title">Your weekend,<br>your vote.</h2></div><div><p>Choose Yes, Maybe or No for each timed idea, and leave optional notes about your preferences. Travel, transitions and preparation buffers are in the full timetable.</p><p class="rsvp-return"><a href="#schedule">↑ View the full timetable and travel windows</a></p></div></div><div class="rsvp-panel"><div class="rsvp-top"><div class="rsvp-field"><label for="rsvp-name">Your name</label><input id="rsvp-name" maxlength="70" autocomplete="name" placeholder="Enter your name"><small>Personalized links support <code>?name=Daryna&amp;attend=Yes</code> to fill your name and default attendance.</small></div><div class="rsvp-attendance"><span>Are you planning to attend the retreat?</span><div id="rsvp-attend-controls" class="rsvp-buttons" role="group" aria-label="Overall attendance"></div></div></div><div class="rsvp-progress"><span>Make your selections or leave some unanswered.</span><span id="rsvp-progress-text" aria-live="polite">0 of '+all.length+' answered</span></div><div class="rsvp-bar" aria-hidden="true"><span id="rsvp-progress-fill"></span></div><form id="rsvp-form"><div id="rsvp-days" class="rsvp-days"></div><div class="rsvp-actions"><button type="button" class="rsvp-action rsvp-action--main" id="rsvp-whatsapp">Send preferences to Muneer on WhatsApp ↗</button><button type="button" class="rsvp-action rsvp-action--alt" id="rsvp-copy">Copy my responses</button></div><p id="rsvp-status" class="rsvp-status" aria-live="polite"></p><div class="rsvp-privacy"><strong>How saving works:</strong> Your votes and notes are saved in this browser as you make them. This site does not have a shared response database yet. The WhatsApp button prepares a message addressed to Muneer at +1 416 333 9671. Tap Send in WhatsApp to deliver it. Nothing is sent automatically.</div></form></div></div>';
 const footer=document.querySelector("footer");if(!footer)return;footer.before(section);
 const nameInput=section.querySelector("#rsvp-name"),days=section.querySelector("#rsvp-days"),status=section.querySelector("#rsvp-status"),attend=section.querySelector("#rsvp-attend-controls");
 const options=["Yes","Maybe","No"];
