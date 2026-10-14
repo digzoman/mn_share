@@ -39,3 +39,18 @@
 .rsvp-privacy{border-left:3px solid #c8a26e;background:#f7f3e9;padding:15px 17px;color:#647165;margin-top:26px;font-size:11px;line-height:1.8}
 @media(max-width:800px){.rsvp-head,.rsvp-top{grid-template-columns:1fr}.rsvp-row{grid-template-columns:1fr;gap:11px}.rsvp-buttons{max-width:410px}}
 @media(max-width:700px){.rsvp{padding:65px 0}.rsvp-head{gap:17px}.rsvp-panel{padding:18px}.rsvp-day__head{padding:15px}.rsvp-row{padding:16px 15px}.rsvp-actions{display:grid;grid-template-columns:1fr}.rsvp-action{width:100%}.rsvp-choice{min-width:60px}}
+
+/* Short schedule labels and an optional notes field on each voting item */
+.slot{grid-template-columns:76px 1fr}
+.route{grid-template-columns:repeat(5,minmax(0,1fr))}
+.route:before{left:8%;right:8%}
+.step{min-width:0}
+.rsvp-note{grid-column:1/-1;display:flex;align-items:flex-start;flex-direction:column;gap:9px;margin-top:-7px}
+.rsvp-note__toggle{appearance:none;border:0;background:transparent;padding:3px 0;color:#44644b;font:600 11px "DM Sans",sans-serif;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.rsvp-note__toggle:hover{color:#213d2a}
+.rsvp-note__toggle:focus-visible{outline:2px solid #477658;outline-offset:3px}
+.rsvp-note__text{width:100%;border:1px solid #bbc9ba;border-radius:3px;background:#fdfcf8;min-height:78px;resize:vertical;padding:12px;font:12px/1.6 "DM Sans",sans-serif;color:#17251e}
+.rsvp-note__text:focus{outline:2px solid #7da18a;outline-offset:1px}
+.rsvp-note__text[hidden]{display:none!important}
+@media(max-width:1000px){.slot{grid-template-columns:70px 1fr}.route{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:700px){.route{grid-template-columns:repeat(2,minmax(0,1fr))}.slot{grid-template-columns:73px 1fr}.rsvp-row{gap:10px}.rsvp-note{margin-top:0}}
