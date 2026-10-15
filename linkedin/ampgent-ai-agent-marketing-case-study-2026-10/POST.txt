@@ -1,0 +1,35 @@
+What if AI agents could do more than write your marketing copy?
+
+What if they could actually help run the work across your entire marketing stack?
+
+That’s what we’ve been building at Ampgent.
+
+We connected AI agents to real tools and used them to:
+
+🔎 Research live Meta ads and identify opportunities across 8 offer categories.
+
+🎨 Write ad copy, create imagery and non-imagery variants, and review creative for accuracy and readability.
+
+⚙️ Configure actual Meta campaigns, ad sets and ads through the Marketing API — then verify the settings.
+
+🌐 Build and improve website pages that connect the ads to the right offers.
+
+💬 Set up and test a HighLevel AI chatbot to handle inquiries, recognize which offer a prospect is asking about, and guide them toward booking.
+
+📊 Connect the website Pixel, server-side conversion events and lead-quality signals — while checking what was actually verified.
+
+Behind it: ChatGPT, Claude Code, Fred, Muse, browser automation, GitHub and our custom MCP connector.
+
+**The big shift isn’t AI writing faster. It’s AI agents doing coordinated, real work across marketing systems.**
+
+We still directed the strategy, approved the ads, controlled spending, and corrected mistakes. This is a behind-the-scenes implementation case study, not a claim of proven campaign ROI.
+
+I wrote a LinkedIn Article explaining the architecture, the workflow, what went wrong, and what other businesses can learn:
+
+👉 {{LINKEDIN_ARTICLE_URL}}
+
+The fully illustrated case study, including screenshots and real examples, is on Ampgent’s website.
+
+**Want to set up AI agents like this for your marketing? DM me “AGENTS” here on LinkedIn.** We can discuss a practical setup for your business.
+
+#AIAgents #MarketingAutomation #MetaAds
