@@ -1,30 +1,26 @@
 (function(){
 "use strict";
 const groups=[
- {day:"Friday, November 6",subtitle:"Flexible arrivals. Every Friday activity is optional.",items:[
-  ["friday-arrival","5:00 PM to 10:00 PM: Flexible arrivals","An illustrative welcome window, not a strict arrival time. Arrive when your travel permits."],
-  ["friday-spa","6:00 PM to 8:15 PM and 9:45 PM to 12:15 AM: Hot tub and sauna","Optional wellness time both before and after the 8:30 PM dinner, once facilities are ready."],
-  ["friday-dinner","8:30 PM to 9:45 PM: Late shared dinner","Relaxed meal. Hosts will set aside food for anyone arriving later."],
-  ["friday-fireplace","9:45 PM to 12:15 AM: Fireplace and conversation","Low key music, games and conversation. Quiet time begins at 1:00 AM."]
+ {day:"Friday, November 6",subtitle:"Rolling arrivals. Join what feels right.",items:[
+  ["friday-arrival","5:00 PM to 10:00 PM: Flexible arrivals","Come whenever travel permits. There is no mandatory check in activity."],
+  ["friday-spa","6:00 PM to 8:15 PM and 9:45 PM to 12:15 AM: Optional spa","Hot tub and sauna available once ready, with after dinner the main opportunity."],
+  ["friday-dinner","8:30 PM to 9:45 PM: Shared welcome dinner","Our one planned Friday gathering. Food can be saved for late arrivals."],
+  ["friday-fireplace","9:45 PM to 12:15 AM: Optional fireplace and games","Quiet music, tea and conversation. Lights out at 1:00 AM."]
  ]},
- {day:"Saturday, November 7",subtitle:"Morning wellness, then a group outing and sunset at the house.",items:[
-  ["saturday-yoga","8:30 AM to 9:10 AM: Indoor yoga","Bring a notebook and pen. Setup runs 8:10 AM to 8:30 AM."],
-  ["saturday-vision","9:10 AM to 9:40 AM: Meditation and vision notes","A combined guided meditation and writing session."],
-  ["saturday-brunch","10:00 AM to 11:00 AM: Brunch and notebook reflection","Optional writing during the meal. Time to get ready is 11:00 AM to 11:30 AM."],
-  ["saturday-walk","12:15 PM to 12:55 PM: Macaulay Mountain walk","Allow 11:30 AM to 12:15 PM for carpool travel and parking."],
-  ["saturday-town","1:10 PM to 1:40 PM: Picton harbour and town stroll","Optional short walk after a 12:55 PM to 1:10 PM transition. Skip this stop first if running late."],
-  ["saturday-tasting","2:00 PM to 2:50 PM: Black Prince wine or vinegar tasting","Group tasting to arrange in advance. Allow 1:40 PM to 2:00 PM for travel and parking."],
-  ["saturday-food","2:00 PM to 2:50 PM: Optional winery pizza and salads","Only if coordinated in advance. This shares the tasting window."],
-  ["saturday-sunset","4:00 PM to 5:05 PM: Sunset gathering at home","Drive back 3:00 PM to 3:45 PM. Arrive and settle by 4:00 PM. Sunset is about 4:51 PM."],
-  ["saturday-spa","5:05 PM to 6:30 PM: Hot tub and sauna at home","Cozy house evening option after sunset."],
-  ["saturday-cozy","6:30 PM to 12:15 AM: Dinner and fireside evening","Option A: 6:30 PM to 8:00 PM dinner, followed by fireside relaxation until 12:15 AM."],
-  ["saturday-lanterns","5:30 PM to 10:15 PM: Optional Firelight Lantern Festival","Option B instead of house dinner: drive, arrive for the 7:00 PM procession, and return by 10:15 PM."]
+ {day:"Saturday, November 7",subtitle:"Yoga at 9 AM, one outdoor stop, culinary tasting, sunset at home.",items:[
+  ["saturday-yoga","9:00 AM to 9:40 AM: Indoor yoga","Arrive by 8:40 AM to set up your mat and notebook."],
+  ["saturday-vision","9:40 AM to 10:10 AM: Meditation and vision notes","30 minutes of meditation with intentions and journal time."],
+  ["saturday-brunch","10:10 AM to 11:00 AM: Brunch and notebook reflections","Cars depart around 11:30 AM after getting ready."],
+  ["saturday-outdoor","12:15 PM to 1:10 PM: One nature outing","Macaulay Mountain or Picton waterfront. Tell us which you prefer below."],
+  ["saturday-tasting","1:45 PM to 2:50 PM: Vinegar tasting with optional wine","Prioritize a culinary experience at Black Prince. Group visit subject to confirmation."],
+  ["saturday-food","1:45 PM to 2:50 PM: Optional winery food","Pizza or salads only if available without delaying the 3:00 PM departure."],
+  ["saturday-sunset","4:00 PM to 5:05 PM: Sunset at the house","Plan to return around 4:00 PM. Sunset is approximately 4:51 PM."],
+  ["saturday-spa","5:05 PM to 6:30 PM: Optional hot tub and sauna","Applies if staying at the house for the evening."]
  ]},
- {day:"Sunday, November 8",subtitle:"Slow morning. Flexible carpool departures.",items:[
-  ["sunday-stretch","9:00 AM to 9:30 AM: Optional morning stretch","Sleep in if you prefer. Brunch preparation runs 9:30 AM to 10:15 AM."],
-  ["sunday-brunch","10:15 AM to 11:15 AM: Shared brunch","Final shared meal and connections."],
-  ["sunday-reflect","11:15 AM to 11:40 AM: Brief appreciation circle","An optional short closing reflection. Packing and cleanup follow until 12:15 PM."],
-  ["sunday-walk","12:15 PM to 12:45 PM: Optional walk and photos","Weather permitting. Departures are flexible from 12:45 PM to 1:30 PM."]
+ {day:"Sunday, November 8",subtitle:"Brunch, closing reflection and easy departures.",items:[
+  ["sunday-stretch","9:00 AM to 9:30 AM: Optional stretching","Enjoy a gentle stretch or sleep in."],
+  ["sunday-brunch","10:15 AM to 11:15 AM: Shared brunch","Our final group meal."],
+  ["sunday-reflect","11:15 AM to 11:40 AM: Brief appreciation circle","A short optional closing conversation. Other free time stays flexible."]
  ]}
 ];
 const all=groups.flatMap(g=>g.items);
@@ -32,7 +28,7 @@ const params=new URLSearchParams(location.search);
 const requestedAttendance=(params.get("attend")||"").trim().toLowerCase();
 const recipient="14163339671";
 const section=document.createElement("section");section.className="rsvp";section.id="preferences";section.setAttribute("aria-labelledby","pref-title");
-section.innerHTML='<div class="wrap"><div class="rsvp-head"><div><div class="kicker eyebrow">08 / Shape the weekend</div><h2 id="pref-title">Your weekend,<br>your vote.</h2></div><div><p>Choose Yes, Maybe or No for each timed idea, and leave optional notes about your preferences. Travel, transitions and preparation buffers are in the full timetable.</p><p class="rsvp-return"><a href="#schedule">↑ View the full timetable and travel windows</a></p></div></div><div class="rsvp-panel"><div class="rsvp-top"><div class="rsvp-field"><label for="rsvp-name">Your name</label><input id="rsvp-name" maxlength="70" autocomplete="name" placeholder="Enter your name"><small>Personalized links support <code>?name=Daryna&amp;attend=Yes</code> to fill your name and default attendance.</small></div><div class="rsvp-attendance"><span>Are you planning to attend the retreat?</span><div id="rsvp-attend-controls" class="rsvp-buttons" role="group" aria-label="Overall attendance"></div></div></div><div class="rsvp-progress"><span>Make your selections or leave some unanswered.</span><span id="rsvp-progress-text" aria-live="polite">0 of '+all.length+' answered</span></div><div class="rsvp-bar" aria-hidden="true"><span id="rsvp-progress-fill"></span></div><form id="rsvp-form"><div id="rsvp-days" class="rsvp-days"></div><div class="rsvp-actions"><button type="button" class="rsvp-action rsvp-action--main" id="rsvp-whatsapp">Send preferences to Muneer on WhatsApp ↗</button><button type="button" class="rsvp-action rsvp-action--alt" id="rsvp-copy">Copy my responses</button></div><p id="rsvp-status" class="rsvp-status" aria-live="polite"></p><div class="rsvp-privacy"><strong>How saving works:</strong> Your votes and notes are saved in this browser as you make them. This site does not have a shared response database yet. The WhatsApp button prepares a message addressed to Muneer at +1 416 333 9671. Tap Send in WhatsApp to deliver it. Nothing is sent automatically.</div></form></div></div>';
+section.innerHTML='<div class="wrap"><div class="rsvp-head"><div><div class="kicker eyebrow">08 / Shape the weekend</div><h2 id="pref-title">Your weekend,<br>your vote.</h2></div><div><p>This revised survey reflects the latest plan. Choose Yes, Maybe or No for the core activities, then choose one outdoor stop and one Saturday evening preference. Add notes wherever you wish.</p><p class="rsvp-return"><a href="#schedule">↑ View the full timetable and travel windows</a></p></div></div><div class="rsvp-panel"><div class="rsvp-top"><div class="rsvp-field"><label for="rsvp-name">Your name</label><input id="rsvp-name" maxlength="70" autocomplete="name" placeholder="Enter your name"><small>Personalized links support <code>?name=Daryna&amp;attend=Yes</code>. The timetable was revised on October 21, so please review and resubmit earlier votes.</small></div><div class="rsvp-attendance"><span>Are you planning to attend the retreat?</span><div id="rsvp-attend-controls" class="rsvp-buttons" role="group" aria-label="Overall attendance"></div></div></div><div class="rsvp-progress"><span>Updated October 21. Your earlier choices are preserved in WhatsApp; please vote again for this version.</span><span id="rsvp-progress-text" aria-live="polite">0 of '+all.length+' answered</span></div><div class="rsvp-bar" aria-hidden="true"><span id="rsvp-progress-fill"></span></div><form id="rsvp-form"><div id="rsvp-days" class="rsvp-days"></div><div class="rsvp-actions"><button type="button" class="rsvp-action rsvp-action--main" id="rsvp-whatsapp">Send preferences to Muneer on WhatsApp ↗</button><button type="button" class="rsvp-action rsvp-action--alt" id="rsvp-copy">Copy my responses</button></div><p id="rsvp-status" class="rsvp-status" aria-live="polite"></p><div class="rsvp-privacy"><strong>How saving works:</strong> Your votes and notes are saved in this browser as you make them. This site does not have a shared response database yet. Earlier survey answers are not automatically copied into this revised survey. The WhatsApp button prepares a message addressed to Muneer at +1 416 333 9671. Tap Send in WhatsApp to deliver it. Nothing is sent automatically.</div></form></div></div>';
 const footer=document.querySelector("footer");if(!footer)return;footer.before(section);
 const nameInput=section.querySelector("#rsvp-name"),days=section.querySelector("#rsvp-days"),status=section.querySelector("#rsvp-status"),attend=section.querySelector("#rsvp-attend-controls");
 const options=["Yes","Maybe","No"];
@@ -56,10 +52,28 @@ for(const group of groups){
   button.addEventListener("click",function(){const show=area.hidden;area.hidden=!show;button.setAttribute("aria-expanded",String(show));button.textContent=show?"Hide note":(area.value.trim()?"Edit note":"+ Add note");if(show)area.focus()});
   note.append(button,area);row.append(info,radios,note);day.append(row);
  }
+ if(group.day.startsWith("Saturday")){
+  const specials=[
+   ["outdoor_choice","Which outdoor stop sounds best?",["Macaulay Mountain","Picton waterfront","Either works","Skip outdoor stop"],"We will plan just one outdoor location."],
+   ["evening_choice","What would you prefer Saturday night?",["Cozy dinner at house","Lantern festival in Picton","Either works"],"These are alternatives. The lantern festival means skipping the full house dinner."]
+  ];
+  for(const [id,title,values,detail] of specials){
+   const wrap=document.createElement("div");wrap.className="rsvp-special";wrap.dataset.question=id;
+   const h=document.createElement("div");h.className="rsvp-special__title";h.textContent=title;
+   const description=document.createElement("p");description.className="rsvp-special__detail";description.textContent=detail;
+   const opts=document.createElement("div");opts.className="rsvp-special__choices";opts.setAttribute("role","group");opts.setAttribute("aria-label",title);
+   for(const value of values)opts.append(choice(id,value));
+   const noteWrap=document.createElement("div");noteWrap.className="rsvp-note";
+   const button=document.createElement("button");button.type="button";button.className="rsvp-note__toggle";button.setAttribute("aria-expanded","false");button.setAttribute("aria-controls","note-"+id);button.textContent="+ Add note";
+   const area=document.createElement("textarea");area.id="note-"+id;area.dataset.note=id;area.className="rsvp-note__text";area.rows=3;area.maxLength=350;area.hidden=true;area.setAttribute("aria-label","Optional note for "+title);area.placeholder="Tell us what you would change";
+   button.addEventListener("click",()=>{const show=area.hidden;area.hidden=!show;button.setAttribute("aria-expanded",String(show));button.textContent=show?"Hide note":(area.value.trim()?"Edit note":"+ Add note");if(show)area.focus()});
+   noteWrap.append(button,area);wrap.append(h,description,opts,noteWrap);day.append(wrap);
+  }
+ }
  days.append(day);
 }
 nameInput.value=(params.get("name")||"").slice(0,70);
-function key(){return "abundanceNov2026:rsvp:"+nameInput.value.trim().toLocaleLowerCase()}
+function key(){return "abundanceNov2026:rsvp:v2:"+nameInput.value.trim().toLocaleLowerCase()}
 function read(){
  const answers={},notes={};
  for(const i of section.querySelectorAll('input[type="radio"]:checked'))answers[i.name]=i.value;
@@ -85,8 +99,11 @@ for(const i of section.querySelectorAll('input[type="radio"]'))i.addEventListene
 for(const area of section.querySelectorAll('textarea[data-note]'))area.addEventListener("input",persist);
 function message(){
  const state=read();if(!state.name){nameInput.focus();status.setAttribute("role","alert");status.textContent="Please enter your name before sharing.";return null}
- const lines=["ABUNDANCE RETREAT 2.0 | NOVEMBER 6 TO 8","Name: "+state.name,"Planning to attend: "+(state.answers.attend||"Not decided"),""];
+ const lines=["ABUNDANCE RETREAT 2.0 | NOVEMBER 6 TO 8 | REVISED OCT 21","Name: "+state.name,"Planning to attend: "+(state.answers.attend||"Not decided"),""];
  for(const group of groups){lines.push(group.day+":");for(const item of group.items){const id=item[0],title=item[1];lines.push("  "+(state.answers[id]||"Not answered")+" | "+title);if(state.notes[id])lines.push("    Note: "+state.notes[id])}lines.push("")}
+ lines.push("Outdoor stop preference: "+(state.answers.outdoor_choice||"Not selected"));if(state.notes.outdoor_choice)lines.push("  Note: "+state.notes.outdoor_choice);
+ lines.push("Saturday evening preference: "+(state.answers.evening_choice||"Not selected"));if(state.notes.evening_choice)lines.push("  Note: "+state.notes.evening_choice);
+ lines.push("");
  lines.push("These are preferences to help plan the weekend, not a confirmed booking.");return lines.join("\n");
 }
 section.querySelector("#rsvp-whatsapp").addEventListener("click",()=>{
