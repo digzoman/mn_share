@@ -101,3 +101,18 @@
 .insights-disclaimer{font-size:11px;color:#667568;margin-top:20px;line-height:1.9;max-width:950px}
 @media(max-width:850px){.insights-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.route{grid-template-columns:repeat(2,minmax(0,1fr))}.insights{padding:55px 0}.insights-head{grid-template-columns:1fr;gap:15px}.insights-grid{gap:9px}.insights-stat{padding:16px 12px}.insights-stat strong{font-size:32px}.rsvp-special{margin:12px 0;padding:17px 12px}}
+
+/* November 13 to 15 2026: new evening experience cards */
+.options--three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.options--three .option{min-width:0;padding:clamp(20px,3vw,35px)}
+.options--three .option h3{font-size:clamp(32px,3.6vw,43px)}
+.options--three .option p{font-size:12px}
+.option--dinner{background:#d8e3d5;color:#263c2f}
+.option--dinner .eyebrow{color:#7b613f}
+.alternatives-more{display:grid;grid-template-columns:1.5fr .7fr;gap:45px;margin-top:22px;padding:26px 29px;background:#e8e8dc;border:1px solid #d7d8ce}
+.alternatives-more h3{font-size:31px;margin:9px 0 14px}
+.alternatives-more p{font-size:12px;line-height:1.8;margin:10px 0;color:#5c6e62}
+.alternatives-more__links{display:flex;flex-direction:column;align-items:flex-start;gap:16px;justify-content:center}
+.alternatives-more__links a{font-size:12px;color:#355c43;text-decoration:underline;text-underline-offset:4px;font-weight:700}
+@media(max-width:890px){.options--three{grid-template-columns:1fr 1fr}.options--three .option{min-height:310px}.alternatives-more{grid-template-columns:1fr}}
+@media(max-width:700px){.options--three{grid-template-columns:1fr}.options--three .option{min-height:270px}.alternatives-more{padding:24px 19px}.alternatives-more h3{font-size:28px}}
