@@ -116,3 +116,17 @@
 .alternatives-more__links a{font-size:12px;color:#355c43;text-decoration:underline;text-underline-offset:4px;font-weight:700}
 @media(max-width:890px){.options--three{grid-template-columns:1fr 1fr}.options--three .option{min-height:310px}.alternatives-more{grid-template-columns:1fr}}
 @media(max-width:700px){.options--three{grid-template-columns:1fr}.options--three .option{min-height:270px}.alternatives-more{padding:24px 19px}.alternatives-more h3{font-size:28px}}
+
+/* Route comparison and sunset options for Nov 14 */
+.day--feature__routes{padding:20px 16px 14px;background:#254536}
+.day--feature__routes .evening-label{color:#e5cda3}
+.route-choice{background:#f5f8f1}
+.route-choice__intro{font-size:12px;line-height:1.85;color:#526956;margin:0 7px 14px}
+.route-choice h4{font-size:32px}
+.route--three{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.route--three:before{left:14%;right:14%}
+.route--three .step{min-width:0}
+.route--three .step p{line-height:1.8}
+.journey-warning{margin-top:32px;padding:19px 23px;background:#e8eee4;border-left:3px solid #9aa88d;font-size:12px;line-height:1.8;color:#476452}
+@media(max-width:900px){.route--three{grid-template-columns:repeat(3,minmax(0,1fr))}.day--feature__routes{padding:16px 10px}}
+@media(max-width:700px){.route--three{grid-template-columns:1fr;gap:15px}.route--three:before{display:none}.route--three .step{border-bottom:1px solid #b7c8b1;padding-bottom:13px}.day--feature__routes{padding:16px 10px}.route-choice{margin:9px 0}.route-choice h4{font-size:30px}.journey-warning{padding:15px 18px}}
