@@ -25,6 +25,7 @@ const groups=[
  ]}
 ];
 const all=groups.flatMap(g=>g.items);
+const totalQuestions=all.length+2;
 const params=new URLSearchParams(location.search);
 const requestedAttendance=(params.get("attend")||"").trim().toLowerCase();
 const recipient="14163339671";
@@ -81,7 +82,7 @@ function read(){
  for(const i of section.querySelectorAll('textarea[data-note]')){const text=i.value.trim();if(text)notes[i.dataset.note]=text}
  return {name:nameInput.value.trim(),answers,notes,updated:new Date().toISOString()};
 }
-function progress(){const state=read(),count=all.filter(item=>state.answers[item[0]]).length;section.querySelector("#rsvp-progress-text").textContent=count+" of "+all.length+" answered";section.querySelector("#rsvp-progress-fill").style.width=(count/all.length*100)+"%"}
+function progress(){const state=read(),count=all.filter(item=>state.answers[item[0]]).length+(state.answers.outdoor_choice?1:0)+(state.answers.evening_choice?1:0);section.querySelector("#rsvp-progress-text").textContent=count+" of "+totalQuestions+" answered";section.querySelector("#rsvp-progress-fill").style.width=(count/totalQuestions*100)+"%"}
 function persist(){progress();try{if(read().name)localStorage.setItem(key(),JSON.stringify(read()));status.removeAttribute("role");status.textContent="Saved on this device. Use WhatsApp or Copy to share with the hosts."}catch(e){status.textContent="Local saving is unavailable. You can still share your responses."}}
 function restore(){
  for(const i of section.querySelectorAll('input[type="radio"]'))i.checked=false;
