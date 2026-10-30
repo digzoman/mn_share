@@ -223,3 +223,10 @@ details[open]>summary .expand-chevron,details[open]>summary .chevron{transform:r
 .route--two>.between-choices span{height:54px;width:54px}
 @media(max-width:860px){.drive-columns{gap:12px}.drive-diagram{padding:17px}.drive-route{padding:15px}.drive-stop{grid-template-columns:1fr;gap:3px}.options--decision>.option-decision{padding:22px 18px}}
 @media(max-width:700px){.options--decision{flex-direction:column;gap:0}.options--decision>.option-decision{min-height:0;width:100%}.options--decision>.between-choices{height:65px;width:100%}.options--decision>.between-choices span{left:50%}.route--two>.between-choices{position:relative;left:auto;top:auto;transform:none;margin:-5px auto}.drive-map-section{padding:55px 0}.drive-map-head{grid-template-columns:1fr;gap:14px}.drive-columns{grid-template-columns:1fr;gap:13px}.drive-stop{grid-template-columns:105px 1fr}.drive-diagram{padding:14px}.drive-fork{height:56px}.route-expand{padding:0 3px 7px}.drive-origin{padding:15px}}
+
+/* Choice separation in the voting questionnaire */
+.rsvp-special__choices{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+.rsvp-special__choices>.rsvp-choice{flex:1 1 38%;min-width:175px}
+.rsvp-special__choices>.survey-or{display:flex;justify-content:center;align-items:center;flex:0 0 45px;align-self:center;width:45px;height:45px;border-radius:50%;font-size:11px;font-weight:800;letter-spacing:.1em;background:#e5e7da;border:1px solid #aaba9c;color:#35553b}
+@media(min-width:701px){.rsvp-special__choices{flex-direction:column;align-items:stretch;gap:6px}.rsvp-special__choices>.rsvp-choice{flex:auto;min-width:0;width:100%}.rsvp-special__choices>.survey-or{flex:0 0 30px;width:42px;height:30px;border:0;border-radius:0;background:transparent;color:#9d7857;font-size:12px}}
+@media(max-width:700px){.rsvp-special__choices{flex-direction:column;gap:5px}.rsvp-special__choices>.rsvp-choice{flex:auto;min-width:0;width:100%}.rsvp-special__choices>.survey-or{width:40px;height:29px;flex:0 0 29px;background:transparent;border:0;align-self:center;color:#986f50}}
