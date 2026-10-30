@@ -230,3 +230,6 @@ details[open]>summary .expand-chevron,details[open]>summary .chevron{transform:r
 .rsvp-special__choices>.survey-or{display:flex;justify-content:center;align-items:center;flex:0 0 45px;align-self:center;width:45px;height:45px;border-radius:50%;font-size:11px;font-weight:800;letter-spacing:.1em;background:#e5e7da;border:1px solid #aaba9c;color:#35553b}
 @media(min-width:701px){.rsvp-special__choices{flex-direction:column;align-items:stretch;gap:6px}.rsvp-special__choices>.rsvp-choice{flex:auto;min-width:0;width:100%}.rsvp-special__choices>.survey-or{flex:0 0 30px;width:42px;height:30px;border:0;border-radius:0;background:transparent;color:#9d7857;font-size:12px}}
 @media(max-width:700px){.rsvp-special__choices{flex-direction:column;gap:5px}.rsvp-special__choices>.rsvp-choice{flex:auto;min-width:0;width:100%}.rsvp-special__choices>.survey-or{width:40px;height:29px;flex:0 0 29px;background:transparent;border:0;align-self:center;color:#986f50}}
+
+/* Mobile cards must grow to content rather than inherit desktop zero basis. */
+@media(max-width:700px){.options--decision>.option-decision{flex:0 0 auto!important;min-height:unset;height:auto;max-height:none}.options--decision>.between-choices{flex:0 0 60px}.rsvp-special__choices>.survey-or{font-size:15px;font-weight:850;letter-spacing:.15em}}
