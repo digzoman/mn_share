@@ -130,3 +130,33 @@
 .journey-warning{margin-top:32px;padding:19px 23px;background:#e8eee4;border-left:3px solid #9aa88d;font-size:12px;line-height:1.8;color:#476452}
 @media(max-width:900px){.route--three{grid-template-columns:repeat(3,minmax(0,1fr))}.day--feature__routes{padding:16px 10px}}
 @media(max-width:700px){.route--three{grid-template-columns:1fr;gap:15px}.route--three:before{display:none}.route--three .step{border-bottom:1px solid #b7c8b1;padding-bottom:13px}.day--feature__routes{padding:16px 10px}.route-choice{margin:9px 0}.route-choice h4{font-size:30px}.journey-warning{padding:15px 18px}}
+
+/* October 30: destination story photography and simplified choices */
+.place-gallery{background:#f4f2e9;padding:85px 0 92px}
+.place-gallery__heading{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:end;margin:18px 0 48px}
+.place-gallery__heading h2{font:500 clamp(49px,7vw,83px)/.96 "Cormorant Garamond",Georgia,serif;letter-spacing:-.02em}
+.place-gallery__heading p{font-size:13px;color:#69786c;line-height:1.9;max-width:520px}
+.place-gallery__label{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:26px 0 17px}
+.place-gallery__label span{font:10px "DM Mono",monospace;letter-spacing:.09em;color:#986d4d;text-transform:uppercase}
+.place-gallery__label h3{font:500 clamp(27px,4vw,42px)/1.03 "Cormorant Garamond",serif}
+.place-gallery__label--second{margin-top:55px}
+.place-gallery__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.realphoto{margin:0;min-width:0;overflow:hidden;background:#e5e8df;border:1px solid #e1dfd4}
+.realphoto img{display:block;width:100%;height:235px;object-fit:cover}
+.realphoto figcaption{display:flex;flex-direction:column;gap:7px;padding:13px 13px 15px;background:#fffdf8;line-height:1.55}
+.realphoto figcaption span{font-weight:700;font-size:11px;color:#28432e}
+.realphoto figcaption a{font-size:10px;color:#567258;text-decoration:underline;text-underline-offset:3px}
+.place-gallery__footnote{font-size:10px;color:#7b897d;line-height:1.8;margin-top:21px;max-width:950px}
+.route-choice__photos{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:10px 8px 20px}
+.route-choice__photos .realphoto img{height:155px}
+.route-choice__photos figcaption{padding:8px}
+.route-choice__photos figcaption span{font-size:10px}
+.venue-couple{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:25px}
+.venue-couple__item{background:#fffefb;padding:10px;border:1px solid #dadfd4}
+.venue-couple__item .realphoto img{height:290px}
+.venue-couple__item p{font-size:12px;line-height:1.8;color:#6b7c6c;padding:10px 5px 2px}
+.route--two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.route--two:before{left:24%;right:24%}
+.rsvp-special__context{font-size:12px;line-height:1.8;color:#2f5438;background:#f9fcf6;border-left:3px solid #9db49f;padding:11px 14px;margin-top:15px}
+@media(max-width:980px){.place-gallery__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.place-gallery__label{align-items:start;flex-direction:column}.realphoto img{height:240px}}
+@media(max-width:700px){.place-gallery{padding:60px 0}.place-gallery__heading{grid-template-columns:1fr;gap:13px;margin-bottom:32px}.place-gallery__grid{gap:9px}.realphoto img{height:155px}.realphoto figcaption{padding:9px 8px}.realphoto figcaption a{font-size:9px}.place-gallery__label--second{margin-top:38px}.route-choice__photos .realphoto img{height:135px}.venue-couple{grid-template-columns:1fr}.venue-couple__item .realphoto img{height:230px}.route--two{grid-template-columns:1fr}.route--two:before{display:none}.rsvp-special__context{padding:10px;font-size:11px}}
