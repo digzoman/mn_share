@@ -19,7 +19,7 @@ const groups=[
  ["sunday-stretch","9:00 AM to 9:30 AM: Optional stretching","Gentle movement or sleep in."],
  ["sunday-brunch","10:15 AM to 11:15 AM: Shared brunch","The final group meal."],
  ["sunday-reflect","11:15 AM to 11:40 AM: Closing appreciation","A short reflection."],
- ["sunday-market","After 12:15 PM: Optional GIFTED holiday market","An independent visit in Bloomfield, not part of the group schedule."]
+ ["sunday-market","1:00 PM onward: Optional GIFTED holiday market","An independent visit in Bloomfield, not part of the group schedule."]
  ]}
 ];
 const all=groups.flatMap(g=>g.items);
@@ -62,7 +62,7 @@ for(const group of groups){
    const h=document.createElement("div");h.className="rsvp-special__title";h.textContent=title;
    const description=document.createElement("p");description.className="rsvp-special__detail";description.textContent=detail;
    const opts=document.createElement("div");opts.className="rsvp-special__choices";opts.setAttribute("role","group");opts.setAttribute("aria-label",title);
-   for(const value of values)opts.append(choice(id,value));
+   values.forEach((value,i)=>{if(i>0){const or=document.createElement("div");or.className="survey-or";or.setAttribute("aria-hidden","true");or.textContent="OR";opts.append(or)}opts.append(choice(id,value))});
    const noteWrap=document.createElement("div");noteWrap.className="rsvp-note";
    const button=document.createElement("button");button.type="button";button.className="rsvp-note__toggle";button.setAttribute("aria-expanded","false");button.setAttribute("aria-controls","note-"+id);button.textContent="+ Add note";
    const area=document.createElement("textarea");area.id="note-"+id;area.dataset.note=id;area.className="rsvp-note__text";area.rows=3;area.maxLength=350;area.hidden=true;area.setAttribute("aria-label","Optional note for "+title);area.placeholder="Tell us what you would change";
