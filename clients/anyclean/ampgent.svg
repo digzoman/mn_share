@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" role="img" aria-label="Ampgent logo with AI Agents plus Staff subline">
+  <title>Ampgent logo</title>
+  <defs>
+    <clipPath id="ampgentLockupClip">
+      <rect x="0" y="0" width="200" height="150"/>
+    </clipPath>
+  </defs>
+  <g transform="translate(35 32) scale(1.05)">
+    <g clip-path="url(#ampgentLockupClip)">
+      <line x1="53" y1="150" x2="87.84" y2="63.77" stroke="#CBAE85" stroke-width="34" stroke-linecap="round"/>
+      <line x1="87" y1="150" x2="107.01" y2="100.45" stroke="#1E66AE" stroke-width="34" stroke-linecap="round"/>
+    </g>
+    <circle cx="126.5" cy="133" r="17" fill="#A8DCFD"/>
+  </g>
+  <text x="190" y="122" font-family="Manrope, Segoe UI, Arial, sans-serif" font-size="104" font-weight="800" letter-spacing="-3">
+    <tspan fill="#A8DCFD">Amp</tspan><tspan fill="#1E66AE" dx="-8">gent</tspan>
+  </text>
+  <text x="190" y="194" font-family="Manrope, Segoe UI, Arial, sans-serif" font-size="40" font-weight="800" letter-spacing="8" fill="#CBAE85">AI Agents + Staff</text>
+</svg>
