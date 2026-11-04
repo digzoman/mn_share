@@ -1,4 +1,4 @@
-# Anyclean Growth Strategy, Ampgent Ã Crowdset
+# Anyclean Growth Strategy, Ampgent × Crowdset
 
 Client-facing browser presentation, prepared November 4, 2026.
 
